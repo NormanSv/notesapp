@@ -1,12 +1,28 @@
 $yellow: rgb(251, 215, 95);
 $white: #ffffff;
 $green: #18c577;
+$lightgreen: #7be9bd;
+$dirty: #88b043;
+$orange:#ffc14d;
+$lightpurle:#8450ff;
+$purple:#5c38b3;
 
 .header{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 15px;
-    padding-left: 6%;
-    background-color: $yellow;
+    background-color: $orange;
+    border-bottom: 10px solid #f09f1d;
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    p{
+        font-size: 18px;
+        font-weight: bold;
+        font-family: monospace;
+    }
 }
 .container{
     font-size: 16px;
@@ -19,7 +35,7 @@ $green: #18c577;
         width: 300px;
         min-height: 200px;
         margin: 10px 15px;
-        background: $yellow;
+        background: $orange;
         padding:10px;
         border-radius: 10px;
         display: flex;
@@ -28,7 +44,7 @@ $green: #18c577;
         word-wrap: break-word;
         transition: all .3s linear;
         &:hover{
-            box-shadow: 10px 10px 0px #c3b600;
+            box-shadow: 10px 10px 0px #f09f1d;
         }
         .noteTitle{
             font-weight: bold;
@@ -48,6 +64,7 @@ $green: #18c577;
                 border: none;
                 transition: all .3s linear;
                 &:hover{
+                    cursor: pointer;
                     background: #dfdfdf;
                 }
             }
@@ -61,25 +78,30 @@ $green: #18c577;
             margin-top: 5px;
             .tag{
                 font-size: 12px;
+                font-family: monospace;
+                color: white;
                 padding: 5px 10px;
                 margin: 5px;
                 border-radius: 15px;
-                background: $yellow;
+                border: none;
+                background: $lightpurle;
                 transition: all .3s linear;
                 &:hover{
                     cursor: pointer;
-                    background: #e2d300;
+                    background: $purple;
                 }
             }
         }
     }
     .add{
-        background: $green;
+        background: $lightpurle;
         &:hover{
-            box-shadow: 10px 10px 0px #0fb369;
+            box-shadow: 10px 10px 0px $purple;
         }
         input{
             border: none;
+            border-radius: 10xp;
+            font-size: 14px;
         }
     }
     .new{
@@ -97,9 +119,9 @@ input[type=text]{
     padding: 5px;
     margin-left: 6%;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     background-color: $white;
-    border: 2px solid $yellow;
+    border: 2px solid $orange;
     outline: none;
     color: black;
     min-width: 200px;
@@ -108,9 +130,21 @@ textarea {
     resize: none;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-size: 14px;
+}
+.clearBtn{
+    padding: 6px;
+    padding-bottom: 7px;
+    margin-left: -1px;
+    border: 2px solid $orange;
+    border-radius: 0px 10px 10px 0px;
+    background: $white;
+    &:hover{
+        cursor: pointer;
+        background: #dfdfdf;
+    }
 }

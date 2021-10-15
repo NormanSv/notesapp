@@ -29,7 +29,7 @@ class Note extends React.Component {
             </div>
             <div className='noteTags'>
                 {note.tags ? note.tags.map((tag) => (
-                  <div className="tag">{tag}</div>
+                  <button type="button" className="tag" onClick={() => { this.props.handleTagClick(tag)}}>{tag}</button>
                 )):''}
             </div>
         </div>

@@ -8,13 +8,15 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import logo from './images/favicon.png'
 
 function App() {
   return (
     <Router>
       <div>
       <div class="header">
-      <p>Your notes app with tags</p>
+        <img src={logo} alt=""/>
+        <p>Your notes app with tags</p>
       </div>
         <Switch>
           <Route exact path="/" component={Noteslist}/>

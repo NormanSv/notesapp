@@ -11,6 +11,7 @@ class EditNote extends React.Component {
       goBack:false,
     };
     this.handleChange=this.handleChange.bind(this);
+    this.handleChangeTitle=this.handleChangeTitle.bind(this);
     this.handleSave=this.handleSave.bind(this);
     this.handleCancel=this.handleCancel.bind(this);
     this.handleDelete=this.handleDelete.bind(this);
@@ -33,10 +34,18 @@ class EditNote extends React.Component {
   handleChange(event) {
     const target = event.target;
     const value = target.value;
-    const name = target.name;
-    let newtags = value.match(/#[a-zA-Zа-яА-ЯёЁ0-9_]+/g);    this.setState({
-      [name]: value,
+    let newtags = value.match(/#[a-zA-Zа-яА-ЯёЁ0-9_]+/g);   
+    this.setState({
+      body: value,
       tags:newtags,
+    });
+  }
+
+  handleChangeTitle(event){
+    const target = event.target;
+    const value = target.value;
+    this.setState({
+      title: value
     });
   }
   handleSave(e) {
@@ -94,7 +103,7 @@ class EditNote extends React.Component {
     return(
     <div className='container edit'>
       <div className='note add'>
-        <input type='text' className='noteTitle' placeholder="Note title" name="title" value={this.state.title} onChange={this.handleChange}></input>
+        <input type='text' className='noteTitle' placeholder="Note title" name="title" value={this.state.title} onChange={this.handleChangeTitle}></input>
         <textarea className='noteBody' name="body" value={this.state.body} onChange={this.handleChange} rows="7" placeholder="Note Body"></textarea>
         <div className='noteFooter'>
             <div className='noteTags'>

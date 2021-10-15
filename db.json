@@ -3,45 +3,26 @@
     {
       "id": 1,
       "title": "First note",
-      "body": "Test notes #ffffff #hello",
+      "body": "Test notes #ffffff #hello #тэг",
       "tags": [
         "#ffffff",
-        "#hello"
+        "#hello",
+        "#тэг"
       ]
     },
     {
-      "title": "New Note with Tags",
-      "body": "tags #shop #dslfjslf\n#dsflshflsfhsfhs Sdfsgsgsg\n#onemore #fdsfsdfываа #авыаыва #привет_ваыва\n",
+      "title": "Tutorial note",
+      "body": "Hi, this is me test note with a little #tutorial how to use this website.\nFirst of all, all your #data stores on db.json file.\nYou can use search input to find #note with tag.\nIf you want to add #tag you shoud add \"#\" symdol before word.\nYou can #edit #delete and #create new notes with special buttons.",
       "tags": [
-        "#shop",
-        "#dslfjslf",
-        "#dsflshflsfhsfhs",
-        "#onemore",
-        "#fdsfsdfываа",
-        "#авыаыва",
-        "#привет_ваыва"
+        "#tutorial",
+        "#data",
+        "#note",
+        "#tag",
+        "#edit",
+        "#delete",
+        "#create"
       ],
-      "id": 2
-    },
-    {
-      "title": "gfhf",
-      "body": "fghdhfdgh",
-      "tags": null,
       "id": 3
-    },
-    {
-      "title": "sdfgsdfgsdg",
-      "body": "dfgsdg  #gsdgdfgdgdg",
-      "tags": [
-        "#gsdgdfgdgdg"
-      ],
-      "id": 4
-    },
-    {
-      "title": "dfgdgsdg",
-      "body": "dfgdgdfgdfg",
-      "tags": null,
-      "id": 5
     },
     {
       "title": "search",
@@ -50,6 +31,31 @@
         "#special_simbol"
       ],
       "id": 6
+    },
+    {
+      "title": "Hello",
+      "body": "заметка #заметка - русский тоже поддерживается! #круто",
+      "tags": [
+        "#заметка",
+        "#круто"
+      ],
+      "id": 7
+    },
+    {
+      "title": "Вывод ТЭГОВ",
+      "body": "Нажмите на #тэг внизу заметки чтобы вывести все заметки с таким тэгом.\nне нужно вводить самому... удобно не правда ли??)",
+      "tags": [
+        "#тэг"
+      ],
+      "id": 8
+    },
+    {
+      "title": "Очистка поля и тэгов",
+      "body": "#нажми на крестик рядом с полем для поиска чтобы отчистить его и вывести все свои заметки.\nубери значёк \"#\" перед словом чтобы этот тэг исчез из списка тэгов",
+      "tags": [
+        "#нажми"
+      ],
+      "id": 9
     }
   ]
 }
