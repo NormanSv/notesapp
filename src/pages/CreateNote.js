@@ -7,6 +7,7 @@ class CreateNote extends React.Component {
     this.state = {
       body: '',
       title:'',
+      tags:[],
       goBack:false,
     };
     this.handleChange=this.handleChange.bind(this);

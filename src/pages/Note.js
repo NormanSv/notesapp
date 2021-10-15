@@ -5,7 +5,7 @@ class Note extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      noteText: '',
+      noteTags: [],
     };
   }
 
