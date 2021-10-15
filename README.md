@@ -1,6 +1,7 @@
 # Simple Notes App - React(react-router), SCSS, json-server
 You can add new notes, edit, delete, search.
 Im use json-server to store and edit data on db.json file. 
+Input #yourtag in search input to show current notes.
 
 # Getting Started with Create React App
 

@@ -22,6 +22,34 @@
         "#привет_ваыва"
       ],
       "id": 2
+    },
+    {
+      "title": "gfhf",
+      "body": "fghdhfdgh",
+      "tags": null,
+      "id": 3
+    },
+    {
+      "title": "sdfgsdfgsdg",
+      "body": "dfgsdg  #gsdgdfgdgdg",
+      "tags": [
+        "#gsdgdfgdgdg"
+      ],
+      "id": 4
+    },
+    {
+      "title": "dfgdgsdg",
+      "body": "dfgdgdfgdfg",
+      "tags": null,
+      "id": 5
+    },
+    {
+      "title": "search",
+      "body": "#special_simbol search test",
+      "tags": [
+        "#special_simbol"
+      ],
+      "id": 6
     }
   ]
 }

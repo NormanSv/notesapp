@@ -3,28 +3,27 @@ import Note from './Note';
 import {Link} from "react-router-dom";
 
 class Noteslist extends React.Component {
-    constructor(props){
-      super(props);
-      this.state={
-        notes:[],
-        searchQuery: '',
-      }
+  constructor(props){
+    super(props);
+    this.state={
+      notes:[],
+      searchQuery: '',
     }
+  }
 
-    componentDidMount() {
-      fetch('http://localhost:8080/notes')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({notes:data})
-        console.log(data);
-      });
-    }
- 
+  componentDidMount() {
+    fetch('http://localhost:8080/notes')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      this.setState({notes:data})
+      console.log(data);
+    });
+  }
 
-    handleChange(e) {
-      this.setState({ searchQuery: e.target.value });
+  handleChange(e) {
+    this.setState({ searchQuery: e.target.value });
   }
 
     render() {
@@ -33,8 +32,8 @@ class Noteslist extends React.Component {
           <input value={this.state.searchQuery} onChange={this.handleChange.bind(this)} type="text" className="search" placeholder="Search" />
           <div className="container">
             {this.state.notes.filter(note => {
-                return note.title.toLowerCase().match(this.state.searchQuery.toLowerCase()) || note.body.toLowerCase().match(this.state.searchQuery.toLowerCase());
-            }).map((note,key) => {
+                return  this.state.searchQuery==''?note: [note.tags].join(' ').match(this.state.searchQuery.toLowerCase());})
+            .map((note,key) => {
                 return (
                     <div key={key}>
                     <Note
