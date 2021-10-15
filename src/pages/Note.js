@@ -4,17 +4,10 @@ import {Link} from "react-router-dom";
 class Note extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      noteTags: [],
-    };
   }
 
-  // handleChange(){
-
-  // }
-
   render() {
-    const { note, removeNote, editNote } = this.props;
+    const { note } = this.props;
     return(
       <div className='note'>
         <div className='noteTitle'>{note.title}</div>
@@ -35,8 +28,9 @@ class Note extends React.Component {
                 </Link>
             </div>
             <div className='noteTags'>
-                <div className="tag">#shop</div>
-                <div className="tag">#important</div>
+                {note.tags ? note.tags.map((tag) => (
+                  <div className="tag">{tag}</div>
+                )):''}
             </div>
         </div>
       </div>

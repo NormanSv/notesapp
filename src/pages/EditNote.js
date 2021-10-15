@@ -11,7 +11,7 @@ class EditNote extends React.Component {
       goBack:false,
     };
     this.handleChange=this.handleChange.bind(this);
-    this.handleSave=this.handleSave  .bind(this);
+    this.handleSave=this.handleSave.bind(this);
     this.handleCancel=this.handleCancel.bind(this);
     this.handleDelete=this.handleDelete.bind(this);
   }
@@ -25,6 +25,7 @@ class EditNote extends React.Component {
         this.setState({
             title: data.title,
             body: data.body,
+            tags:data.tags
         })
     });
   }
@@ -33,9 +34,9 @@ class EditNote extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-
-    this.setState({
-      [name]: value
+    let newtags = value.match(/#[a-zA-Zа-яА-ЯёЁ0-9_]+/g);    this.setState({
+      [name]: value,
+      tags:newtags,
     });
   }
   handleSave(e) {
@@ -51,7 +52,7 @@ class EditNote extends React.Component {
             'Content-Type': 'application/json',
             'Authorization': ''
         },
-        body: JSON.stringify({title: this.state.title, body:this.state.body}),
+        body: JSON.stringify({title: this.state.title, body:this.state.body, tags: this.state.tags}),
         credentials: 'include'
     })
     .then((data) => {
@@ -96,6 +97,11 @@ class EditNote extends React.Component {
         <input type='text' className='noteTitle' placeholder="Note title" name="title" value={this.state.title} onChange={this.handleChange}></input>
         <textarea className='noteBody' name="body" value={this.state.body} onChange={this.handleChange} rows="7" placeholder="Note Body"></textarea>
         <div className='noteFooter'>
+            <div className='noteTags'>
+                {this.state.tags ? this.state.tags.map((tag) => (
+                    <div className="tag">{tag}</div>
+                )):''}
+            </div>
             <div className='noteBtns'>
                 <button type="button" className="btn" onClick={this.handleSave}>
                   <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">

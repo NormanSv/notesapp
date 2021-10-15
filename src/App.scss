@@ -54,8 +54,11 @@ $green: #18c577;
         }
         .noteTags{
             display: flex;
+            flex-wrap: wrap;
             background: $white;
             border-radius: 10px;
+            margin-bottom: 5px;
+            margin-top: 5px;
             .tag{
                 font-size: 12px;
                 padding: 5px 10px;
