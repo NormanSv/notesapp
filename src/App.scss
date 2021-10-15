@@ -1,0 +1,113 @@
+$yellow: rgb(251, 215, 95);
+$white: #ffffff;
+$green: #18c577;
+
+.header{
+    display: block;
+    padding: 10px 15px;
+    padding-left: 6%;
+    background-color: $yellow;
+}
+.container{
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 90%;
+    margin: 5px auto;
+    .note{
+        width: 300px;
+        min-height: 200px;
+        margin: 10px 15px;
+        background: $yellow;
+        padding:10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        word-wrap: break-word;
+        transition: all .3s linear;
+        &:hover{
+            box-shadow: 10px 10px 0px #c3b600;
+        }
+        .noteTitle{
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .noteBody{
+            margin: 10px 0 10px 5px;
+        }
+        .noteBtns{
+            display: flex;
+            justify-content: flex-end;
+            .btn{
+                padding: 5px 8px 4px;
+                margin: 3px;
+                border-radius: 15px;
+                background: $white;
+                border: none;
+                transition: all .3s linear;
+                &:hover{
+                    background: #dfdfdf;
+                }
+            }
+        }
+        .noteTags{
+            display: flex;
+            background: $white;
+            border-radius: 10px;
+            .tag{
+                font-size: 12px;
+                padding: 5px 10px;
+                margin: 5px;
+                border-radius: 15px;
+                background: $yellow;
+                transition: all .3s linear;
+                &:hover{
+                    cursor: pointer;
+                    background: #e2d300;
+                }
+            }
+        }
+    }
+    .add{
+        background: $green;
+        &:hover{
+            box-shadow: 10px 10px 0px #0fb369;
+        }
+        input{
+            border: none;
+        }
+    }
+    .new{
+        min-height: 0;
+        height: 200px;
+    }
+}
+.edit{
+    .note{
+        width: 100%;
+    }
+}
+input[type=text]{
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 6%;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: $white;
+    border: 2px solid $yellow;
+    outline: none;
+    color: black;
+    min-width: 200px;
+}
+textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: 14px;
+}
