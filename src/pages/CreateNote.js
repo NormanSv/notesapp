@@ -36,7 +36,7 @@ class CreateNote extends React.Component {
 
   handleSave(e) {
     e.preventDefault();
-    fetch(`http://localhost:8080/notes`, {
+    fetch(`https://react-json-server-notes-app.herokuapp.com/notes`, {
         method: 'POST',
         crossDomain: true,
         xhrFields: {

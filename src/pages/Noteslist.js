@@ -12,7 +12,7 @@ class Noteslist extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/notes')
+    fetch('https://react-json-server-notes-app.herokuapp.com/notes')
     .then((response) => {
       return response.json();
     })

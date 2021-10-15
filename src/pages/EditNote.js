@@ -18,7 +18,7 @@ class EditNote extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`)
+    fetch(`https://react-json-server-notes-app.herokuapp.com/notes/${this.props.match.params.id}`)
       .then((response) => {
         return response.json();
       })
@@ -50,7 +50,7 @@ class EditNote extends React.Component {
   }
   handleSave(e) {
     e.preventDefault();
-    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`, {
+    fetch(`https://react-json-server-notes-app.herokuapp.com/notes/${this.props.match.params.id}`, {
         method: 'PATCH',
         crossDomain: true,
         xhrFields: {
@@ -72,7 +72,7 @@ class EditNote extends React.Component {
   
   handleDelete(e) {
     e.preventDefault();
-    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`, {
+    fetch(`https://react-json-server-notes-app.herokuapp.com/notes/${this.props.match.params.id}`, {
         method: 'delete',
         crossDomain: true,
         xhrFields: {
