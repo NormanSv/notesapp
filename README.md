@@ -1,5 +1,6 @@
-# Simple Notes App - React(react-router), SCSS, axios
-You can add new notes, edit, delete, search
+# Simple Notes App - React(react-router), SCSS, json-server
+You can add new notes, edit, delete, search.
+Im use json-server to store and edit data on db.json file. 
 
 # Getting Started with Create React App
 

@@ -6,28 +6,22 @@ class Noteslist extends React.Component {
     constructor(props){
       super(props);
       this.state={
-        notes:[{
-          id:0,
-          title:"First",
-          body:"this is lorem",
-      },
-      {
-          id:1,
-          title:'Second',
-          body:'this is',
-      },
-      {
-          id:2,
-          title:'Third',
-          body:'this is',
-      }],
+        notes:[],
         searchQuery: '',
       }
     }
 
     componentDidMount() {
+      fetch('http://localhost:8080/notes')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({notes:data})
+        console.log(data);
+      });
     }
-
+ 
 
     handleChange(e) {
       this.setState({ searchQuery: e.target.value });

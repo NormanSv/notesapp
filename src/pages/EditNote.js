@@ -17,7 +17,16 @@ class EditNote extends React.Component {
   }
 
   componentDidMount() {
-    let noteId = this.props.match.params.id;
+    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState({
+            title: data.title,
+            body: data.body,
+        })
+    });
   }
 
   handleChange(event) {
@@ -30,11 +39,46 @@ class EditNote extends React.Component {
     });
   }
   handleSave(e) {
-    
+    e.preventDefault();
+    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`, {
+        method: 'PATCH',
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': ''
+        },
+        body: JSON.stringify({title: this.state.title, body:this.state.body}),
+        credentials: 'include'
+    })
+    .then((data) => {
+        this.setState({ goBack: true });
+    })
+    .catch(err => console.error(err));
   }
   
   handleDelete(e) {
-    
+    e.preventDefault();
+    fetch(`http://localhost:8080/notes/${this.props.match.params.id}`, {
+        method: 'delete',
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': ''
+        },
+        credentials: 'include'
+    })
+    .then((data) => {
+        this.setState({ goBack: true });
+    })
+    .catch(err => console.error(err));
   }
 
   handleCancel(e) {
@@ -49,8 +93,8 @@ class EditNote extends React.Component {
     return(
     <div className='container edit'>
       <div className='note add'>
-        <input type='text' className='noteTitle' placeholder="Note title" name="title" value={this.state.value} onChange={this.handleChange}></input>
-        <textarea className='noteBody' name="body" value={this.state.value} onChange={this.handleChange} rows="7" placeholder="Note Body"></textarea>
+        <input type='text' className='noteTitle' placeholder="Note title" name="title" value={this.state.title} onChange={this.handleChange}></input>
+        <textarea className='noteBody' name="body" value={this.state.body} onChange={this.handleChange} rows="7" placeholder="Note Body"></textarea>
         <div className='noteFooter'>
             <div className='noteBtns'>
                 <button type="button" className="btn" onClick={this.handleSave}>
